@@ -1,0 +1,14 @@
+import network
+
+# Inicializa la interfaz de red
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+
+# Obtén la dirección MAC
+mac_address = wlan.config('mac')
+
+# Formatea la dirección MAC en un formato legible
+mac_address_str = ':'.join(['{:02X}'.format(b) for b in mac_address])
+
+# Muestra la dirección MAC
+print("Dirección MAC:", mac_address_str)
